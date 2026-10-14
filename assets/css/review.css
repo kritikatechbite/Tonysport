@@ -187,14 +187,14 @@ body {
 
 @media (max-width:1024px) and (min-width:641px) {
     .review-bg {
-        background-image: url("assets/images/tab.png");
+        background-image: url("../images/tab.png");
         background-position: center 35%
     }
 }
 
 @media (max-width:640px) {
     .review-bg {
-        background-image: url("assets/images/mob.png");
+        background-image: url("../images/mob.png");
         background-position: center 20%
     }
 
