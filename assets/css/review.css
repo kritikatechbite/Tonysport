@@ -1,0 +1,230 @@
+:root {
+    --navy: #101D35;
+    --red: #D82938;
+    --ared: #F04452
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0
+}
+
+body {
+    font-family: Inter, system-ui, sans-serif;
+    color: #263449;
+    background: #0B1426
+}
+
+.review-bg {
+    position: fixed;
+    inset: 0;
+    background: #0B1426 center/cover no-repeat url("../images/desk.png");
+    background-position: center 40%
+}
+
+.review-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 14, 28, .55)
+}
+
+.review-wrap {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px
+}
+
+.review-brand {
+    display: block
+}
+
+.review-brand img {
+    height: 40px;
+    width: auto
+}
+
+.review-center {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%
+}
+
+.popup {
+    width: 400px;
+    max-width: 100%;
+    background: #fff;
+    border-radius: 18px;
+    padding: 28px 26px 22px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .45);
+    animation: pop .3s ease both;
+    text-align: center
+}
+
+@keyframes pop {
+    from {
+        opacity: 0;
+        transform: scale(.94) translateY(8px)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+.popup .shield {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 12px;
+    border-radius: 14px;
+    background: #fdf0f1;
+    color: var(--red);
+    display: grid;
+    place-items: center
+}
+
+.popup .shield svg {
+    width: 26px;
+    height: 26px
+}
+
+.popup h1 {
+    font: 800 22px/1.25 "Plus Jakarta Sans", sans-serif;
+    color: var(--navy);
+    margin: 0 0 10px
+}
+
+.popup p {
+    font-size: 15px;
+    line-height: 1.55;
+    margin: 0 0 18px;
+    color: #44546a
+}
+
+.popup-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px
+}
+
+.pbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    border-radius: 10px;
+    font: 700 15px "Plus Jakarta Sans", sans-serif;
+    text-decoration: none;
+    border: 2px solid var(--red);
+    transition: background .2s, color .2s
+}
+
+.pbtn.primary {
+    background: var(--red);
+    color: #fff
+}
+
+.pbtn.primary:hover {
+    background: var(--ared);
+    border-color: var(--ared)
+}
+
+.pbtn.secondary {
+    background: #fff;
+    color: var(--red)
+}
+
+.pbtn.secondary:hover {
+    background: #fdf0f1
+}
+
+.pbtn:focus-visible,
+.popup a:focus-visible {
+    outline: 3px solid var(--navy);
+    outline-offset: 2px
+}
+
+.dest {
+    font-size: 12.5px;
+    color: #66758A;
+    margin: 10px 0 0
+}
+
+.popup-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid #E4E9F0;
+    font-size: 14px
+}
+
+.popup-links a {
+    color: var(--navy);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px
+}
+
+.popup-links a:hover {
+    color: var(--red)
+}
+
+@media (max-width:1024px) and (min-width:641px) {
+    .review-bg {
+        background-image: url("assets/images/tab.png");
+        background-position: center 35%
+    }
+}
+
+@media (max-width:640px) {
+    .review-bg {
+        background-image: url("assets/images/mob.png");
+        background-position: center 20%
+    }
+
+    .popup {
+        width: calc(100% - 32px);
+        padding: 22px 18px 18px;
+        border-radius: 16px
+    }
+
+    .popup h1 {
+        font-size: 20px
+    }
+
+    .popup p {
+        font-size: 14.5px;
+        margin-bottom: 14px
+    }
+
+    .review-brand img {
+        height: 34px
+    }
+
+    .review-center {
+        align-items: flex-end;
+        padding-bottom: 12px
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .popup {
+        animation: none
+    }
+}
